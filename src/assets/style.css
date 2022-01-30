@@ -1,0 +1,440 @@
+/*******************************************************
+COMMON
+*******************************************************/
+html body {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    color: rgb(224, 224, 224);
+    background-color: rgb(20, 20, 19);
+    font-family: Spartan;
+}
+a {
+    text-decoration: none;
+    color: white;
+}
+.row {
+    display: flex;
+}
+.spacer {
+    justify-content: space-between;
+}
+.space-evenly {
+    justify-content: space-evenly;
+}
+.p10 {
+    padding: 10px;
+}
+.relative {
+    position: relative;
+}
+.absolute {
+    position: absolute;
+}
+.p-20 {
+    padding: 20px;
+}
+.p-25 {
+    padding: 30px;
+}
+.mar10 {
+    margin: 10px;
+}
+.mar15 {
+    margin: 15px;
+}
+.m20 {
+    margin: 20px;
+}
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+.trailer {
+    background-color: rgb(44, 44, 43);
+    border-radius: 15px;
+    height: 30px;
+    width: fit-content;
+}
+.trailer .playtrailor {
+    height: 30px;
+}
+.trailer .date {
+    margin: 0;
+}
+
+@media screen and (max-width: 1100px) {
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media screen and (max-width: 550px) {
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+/*******************************************************
+HEADER
+*******************************************************/
+
+header {
+    position: relative;
+}
+header .navbar {
+    width: 100%;
+    height: 70px;
+    position: absolute;
+    border-bottom: 1px solid rgb(248, 244, 244, 0.6);
+    z-index: 3;
+}
+header .logo img {
+    height: 50px;
+    padding: 10px;
+}
+header .smenu {
+    text-align: center;
+}
+.searcharea {
+    position: relative;
+    width: fit-content;
+    padding: 3px;
+}
+.searcharea img {
+    position: absolute;
+    right: 0;
+    width: 25px;
+    padding: 4px;
+}
+.searcharea input {
+    background-color: rgb(0, 0, 0, 0);
+    width: 200px;
+    height: 30px;
+    border-radius: 10px;
+    border: 1px solid rgb(224, 224, 224);
+}
+header .smenu .category img {
+    width: 35px;
+}
+header .smenu .favs img {
+    width: 15px;
+}
+header .menu2 {
+    display: none;
+}
+header .logo {
+    display: none;
+}
+.search2 {
+    display: none;
+}
+.searchpop {
+    position: absolute;
+    top: 0px;
+    right: -60px;
+}
+.togmenu {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    background-color: rgb(0, 0, 0, 0.9);
+    border-bottom-right-radius: 20px;
+}
+@media screen and (max-width: 800px) {
+    header .smenu {
+        display: none;
+    }
+    header .logo {
+        display: none;
+    }
+    header .menu2 {
+        margin: 10px;
+        height: 50px;
+        display: block;
+    }
+    header .menu2.down {
+        transform: rotate(90deg);
+    }
+    header .logo {
+        display: block;
+        height: 50px;
+        margin: 10px;
+    }
+    .search2 {
+        display: block;
+        margin: 20px;
+        width: 30px;
+    }
+}
+
+/*******************************************************
+Cover
+*******************************************************/
+
+.cover {
+    width: 100%;
+    height: 90%;
+}
+.cover .sp-backgroundcover {
+    display: none;
+}
+.cover .backgroundcover {
+    width: 100%;
+    height: 90vh;
+    object-fit: cover;
+}
+.cover .gradient {
+    background: linear-gradient(rgb(41, 40, 40, 0.6) 10%, rgb(0, 0, 0, 0) 50%, rgb(41, 40, 40));
+    position: absolute;
+    height: 90%;
+    width: 100%;
+    z-index: 2;
+}
+.cover .gradient .coverdetails {
+    position: absolute;
+    bottom: 0;
+}
+.cover .gradient .coverdetails .trailer {
+    background-color: rgb(20, 20, 19);
+    height: 35px;
+    border-radius: 20px;
+}
+.cover .gradient .trailer img {
+    height: 35px;
+}
+.cover .gradient .coverdetails .cover-description {
+    width: 60%;
+}
+.cover .gradient .coverdetails .date {
+    font-size: 20px;
+    margin: 0;
+}
+.cover .gradient .coverdetails .cover-description {
+    color: rgb(224, 224, 224, 0.8);
+}
+
+@media screen and (max-width: 1024px) and (max-height: 600px) {
+    .cover .backgroundcover {
+        width: 100%;
+        object-fit: cover;
+    }
+    .cover .gradient {
+        background: linear-gradient(rgba(41, 40, 40, 0.6) 10%, transparent 50%, #292828);
+        position: absolute;
+        width: 100%;
+        z-index: 2;
+    }
+}
+
+@media screen and (min-width: 1023px) and (min-height: 1366px) {
+    .cover .backgroundcover {
+        width: 100%;
+        height: 46vh;
+        object-fit: cover;
+    }
+    .cover .gradient {
+        background: linear-gradient(rgb(41, 40, 40, 0.6) 10%, rgb(0, 0, 0, 0) 50%, rgb(41, 40, 40));
+        position: absolute;
+        height: 46%;
+        width: 100%;
+        z-index: 2;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .cover {
+        height: 105vh;
+    }
+    .cover .backgroundcover {
+        display: none;
+    }
+    .cover .sp-backgroundcover {
+        display: block;
+        width: 100%;
+        height: 90vh;
+        object-fit: cover;
+    }
+    .sp-coverdetails {
+        flex-direction: column;
+        width: fit-content;
+        margin: auto;
+        text-align: center;
+    }
+    .cover .gradient .coverdetails .cover-description {
+        width: 100%;
+    }
+    .cover .gradient .coverdetails {
+        top: 75vh;
+    }
+}
+
+@media screen and (min-width: 719px) and (min-height: 540px) {
+    .cover .gradient .coverdetails .trailer {
+        background-color: #141413;
+        height: 35px;
+        border-radius: 20px;
+        margin-top: -21px;
+    }
+}
+
+
+
+@media screen and (max-width: 360px) {
+    .cover .gradient .coverdetails {
+        top: 72vh;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .cover .gradient .coverdetails {
+        top: 70vh;
+    }
+
+    .cover {
+        width: 103%;
+    }
+    .cover .gradient {
+        background: linear-gradient(rgba(41, 40, 40, 0.6) 10%, transparent 50%, #292828);
+        position: absolute;
+        width: 103%;
+        z-index: 2;
+    }
+}
+
+@media screen and (max-width: 280px) {
+    .content .section-heading {
+        font-size: 30px;
+        margin-top: 50px;
+    }
+    .cover .gradient .coverdetails .date {
+        font-size: 20px;
+        margin: 0;
+        margin-top: -13px;
+    }
+    .cover .gradient .coverdetails {
+        top: 74vh;
+    }
+    .cover {
+        width: 107%;
+    }
+    .cover .gradient {
+        background: linear-gradient(rgba(41, 40, 40, 0.6) 10%, transparent 50%, #292828);
+        position: absolute;
+        width: 107%;
+        z-index: 2;
+    }
+}
+
+/*******************************************************
+Content
+*******************************************************/
+.content {
+    min-height: 80vh;
+}
+.content .section-heading {
+    font-size: 30px;
+}
+.content .pt {
+    padding-top: 70px;
+}
+.content .moviebox {
+    position: relative;
+    height: 450px;
+    width: 250px;
+    margin: 30px auto;
+}
+.content .moviebox .favit {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+.content .moviebox .favit img {
+    width: 40px;
+}
+.content .moviebox .movieposter {
+    height: 80%;
+    width: 100%;
+    object-fit: cover;
+}
+.content .moviebox .moviedeets .darken {
+    color: rgb(224, 224, 224, 0.5);
+}
+.content .moviebox .moviedeets .btn-text {
+    padding: 7px 20px;
+}
+.content .divider {
+    margin: 60px auto;
+    border: none;
+    border-top: 1px solid rgb(224, 218, 218, 0.3);
+    width: 60%;
+}
+@media screen and (max-width: 1100px) {
+}
+
+/*******************************************************
+Footer
+*******************************************************/
+
+footer {
+    margin-top: 100px;
+}
+footer img {
+    height: 40px;
+}
+
+/*******************************************************
+Popupbox
+*******************************************************/
+
+.popupbox {
+    position: fixed;
+    background-color: rgba(250, 242, 242, 0.5);
+    left: 0;
+    right: 0;
+    z-index: 4;
+    height: 100%;
+}
+.popupbox .popup {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.popupbox .box {
+    position: absolute;
+    top: 40px;
+    width: 84%;
+    left: 8%;
+    height: 80%;
+}
+.popupbox .popup .box .coverimage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.popupbox .popup .close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    height: 30px;
+}
+.popupbox .popup .popup-content {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 30%;
+    background: linear-gradient(rgb(0, 0, 0, 0), rgb(0, 0, 0, 1));
+}
+
+@media screen and (max-width: 500x) {
+    p {
+        font-size: 11px;
+    }
+}
