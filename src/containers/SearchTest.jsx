@@ -418,7 +418,7 @@ const SearchPage = () => {
                     </ul>
                     <div className="nav-end">
                         <SearchBar searchValue={searchValue} setSearchValue={setSearchValue} />
-                        <div className="hamburger">
+                        <div className="hamburger" onClick={handleClick}>
                             {click ? (
                                 <FaTimes size={30} style={{ color: '#ffffff' }} />
                             ) : (
