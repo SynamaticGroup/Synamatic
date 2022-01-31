@@ -4,6 +4,8 @@ Movie App, with a frontend built in React & Redux using a public API.
 ```
 ## Live Demo
 Check out [LIVE DEMO](https://synamatic.netlify.app/) here.
+![Synamatic](https://user-images.githubusercontent.com/98618548/151746448-048a3626-47a7-498f-8a3a-8ff606aec71a.PNG)
+
 ## Tech used
 ```
 * Frontend : React & Redux
