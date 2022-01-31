@@ -28,7 +28,13 @@ const Card = ({ movie }) => {
     return (
         <div>
             <div class="moviebox mar10">
-                <img class="movieposter" src={IMG_API + movie.poster_path} alt="" />
+                <div className="movie">
+                    <img class="movieposter" src={IMG_API + movie.poster_path} alt="" />
+                    <div className="movie_overview">
+                        <h2>Overview</h2>
+                        {movie.overview}
+                    </div>
+                </div>
                 <div class="moviedeets">
                     <p>{movie.name}</p>
                     <div class="row spacer">
@@ -48,6 +54,7 @@ const Card = ({ movie }) => {
                         </a>
                     </div>
                 </div>
+
                 {showLikeButton && (
                     <div
                         class="favit"

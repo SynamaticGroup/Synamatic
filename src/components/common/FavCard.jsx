@@ -14,7 +14,13 @@ const FavCard = ({ favourite }) => {
     return (
         <div>
             <div class="moviebox mar10">
-                <img class="movieposter" src={IMG_API + favourite.poster_path} alt="" />
+                <div className="movie">
+                    <img class="movieposter" src={IMG_API + favourite.poster_path} alt="" />
+                    <div className="movie_overview">
+                        <h2>Overview</h2>
+                        {favourite.overview}
+                    </div>
+                </div>{' '}
                 <div class="moviedeets">
                     <div class="row spacer">
                         <div>
