@@ -24,23 +24,7 @@ const Search = () => {
             dispatch(fetchMovies(params));
         }
     }, [search]);
-    return (
-        <>
-            <Header />
-            <section class="content">
-                <div class="pt">
-                    <h1 class="section-heading m20 p10">Search</h1>
-                </div>
-                {console.log(movies)}
-                <div class="grid">
-                    {movies.results.map(movie => (
-                        <Card movie={movie} />
-                    ))}
-                </div>
-            </section>
-            <Footer />
-        </>
-    );
+    return <></>;
 };
 
 export default Search;

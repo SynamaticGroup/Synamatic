@@ -3,6 +3,8 @@ import API from '../API';
 import Card from '../components/common/Card';
 import Footer from '../components/common/Footer';
 import Header from '../components/common/Header';
+import Slider from 'react-slick';
+import Router from '../Router';
 
 const Category = () => {
     const ACTION_API = `https://api.themoviedb.org/3/discover/movie?api_key=a5c5e6fda0c26677175e238d7ee0e1e0&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_genres=28&with_watch_monetization_types=flatrate`;
@@ -60,6 +62,60 @@ const Category = () => {
                 setAnimation(data.results);
             });
     }, []);
+
+    const settings = {
+        className: 'center',
+        infinite: false,
+        centerPadding: '60px',
+        slidesToShow: 4,
+        swipeToSlide: true,
+        afterChange: function (index) {
+            console.log(`Slider Changed to: ${index + 1}, background: #222; color: #bada55`);
+        },
+        responsive: [
+            {
+                breakpoint: 1200,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
+                    infinite: true,
+                    dots: true,
+                    speed: 500
+                }
+            },
+            {
+                breakpoint: 780,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                    infinite: true,
+                    speed: 500
+                }
+            },
+            {
+                breakpoint: 530,
+                settings: {
+                    className: 'center',
+                    centerMode: true,
+                    infinite: true,
+                    centerPadding: '60px',
+                    slidesToShow: 1,
+                    speed: 500,
+                    initialSlide: 0
+                }
+            },
+            {
+                breakpoint: 380,
+                settings: {
+                    infinite: true,
+                    centerPadding: '60px',
+                    slidesToShow: 1,
+                    speed: 500,
+                    initialSlide: 0
+                }
+            }
+        ]
+    };
     return (
         <>
             <Header />
@@ -70,11 +126,11 @@ const Category = () => {
                     </h1>
                 </div>
                 {action ? (
-                    <div class="grid">
+                    <Slider {...settings}>
                         {action.map(movie => (
                             <Card movie={movie} />
                         ))}
-                    </div>
+                    </Slider>
                 ) : (
                     <div class="no-post">
                         <p>No movies here yet...</p>
@@ -85,11 +141,11 @@ const Category = () => {
                     Horror
                 </h1>
                 {horror ? (
-                    <div class="grid">
+                    <Slider {...settings}>
                         {horror.map(movie => (
                             <Card movie={movie} />
                         ))}
-                    </div>
+                    </Slider>
                 ) : (
                     <div class="no-post">
                         <p>No movies here yet...</p>
@@ -101,11 +157,11 @@ const Category = () => {
                 </h1>
 
                 {drama ? (
-                    <div class="grid">
+                    <Slider {...settings}>
                         {drama.map(movie => (
                             <Card movie={movie} />
                         ))}
-                    </div>
+                    </Slider>
                 ) : (
                     <div class="no-post">
                         <p>No movies here yet...</p>
@@ -117,11 +173,11 @@ const Category = () => {
                 </h1>
 
                 {family ? (
-                    <div class="grid">
+                    <Slider {...settings}>
                         {family.map(movie => (
                             <Card movie={movie} />
                         ))}
-                    </div>
+                    </Slider>
                 ) : (
                     <div class="no-post">
                         <p>No movies here yet...</p>
@@ -133,11 +189,11 @@ const Category = () => {
                 </h1>
 
                 {romance ? (
-                    <div class="grid">
+                    <Slider {...settings}>
                         {romance.map(movie => (
                             <Card movie={movie} />
                         ))}
-                    </div>
+                    </Slider>
                 ) : (
                     <div class="no-post">
                         <p>No movies here yet...</p>
@@ -149,11 +205,11 @@ const Category = () => {
                 </h1>
 
                 {animation ? (
-                    <div class="grid">
+                    <Slider {...settings}>
                         {animation.map(movie => (
                             <Card movie={movie} />
                         ))}
-                    </div>
+                    </Slider>
                 ) : (
                     <div class="no-post">
                         <p>No movies here yet...</p>

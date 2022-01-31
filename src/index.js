@@ -6,6 +6,8 @@ import { Provider } from 'react-redux';
 import { ConnectedRouter } from 'connected-react-router';
 import reportWebVitals from './reportWebVitals';
 import * as History from 'history';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 const history = History.createBrowserHistory();
 export const store = createStore(history);

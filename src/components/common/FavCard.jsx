@@ -22,7 +22,7 @@ const FavCard = ({ favourite }) => {
                             <span>{favourite.vote_average}</span>
                             <span class="darken">/10</span>
                         </div>
-                        <div class="trailersec row">
+                        <div class="trailer_link">
                             <img src={ImgArrow} alt="" />
                             <a href={PAGE_API + favourite.id + TRAILER_API} target="_blank" class="btn-text">
                                 {' '}

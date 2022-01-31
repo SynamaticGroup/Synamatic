@@ -1,5 +1,5 @@
 import React from 'react';
-import Imglogo from '../../assets/img/synamatic-logo.png';
+import Imglogo from '../../assets/img/SYNAMATIC.png';
 const Footer = () => {
     return (
         <div>

@@ -24,6 +24,7 @@ const Card = ({ movie }) => {
             setShowLikeButton(false);
         }
     }, [favourites]);
+
     return (
         <div>
             <div class="moviebox mar10">
@@ -31,13 +32,13 @@ const Card = ({ movie }) => {
                 <div class="moviedeets">
                     <p>{movie.name}</p>
                     <div class="row spacer">
-                        <div>
+                        <div className="imgheart">
                             <img src={Imgstar} alt="" />
                             <span>{movie.vote_average}</span>
                             <span class="darken">/10</span>
                         </div>
                         <a href={movie.trailer_link} target="_blank">
-                            <div class="trailersec row">
+                            <div class="trailer_link">
                                 <img src={ImgArrow} alt="" />
                                 <a href={PAGE_API + movie.id + TRAILER_API} target="_blank" class="btn-text">
                                     {' '}
