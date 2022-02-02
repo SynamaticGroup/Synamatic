@@ -111,6 +111,9 @@ a {
         display: grid;
         grid-template-columns: repeat(1, 1fr);
     }
+    .movie_overview {
+        display: none;
+    }
 }
 /*******************************************************
 NAVBAR
@@ -438,7 +441,7 @@ HOMEPAGE
     text-decoration: none;
     color: white;
     background: black;
-    outline: 1px solid red;
+    border: 1px solid red;
     padding: 5px 10px;
     border-radius: 10px;
     font-weight: bold;
